@@ -10,7 +10,7 @@ end
 
 def first_wa(words)
   # Return the first element that begins with the letters 'wa'
-  words.find { |word| word if word.to_s.include?("wa") }
+  words.find { |word| word.to_s.include?("wa") }
 end
 
 def remove_non_strings(array)
