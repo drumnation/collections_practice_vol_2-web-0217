@@ -19,18 +19,19 @@ def remove_non_strings(array)
 end
 
 def count_elements(names_array)
+  # count how many times something appears in an array
   names_array.each_with_object(Hash.new(0)) { |hash, key| key[hash[:name]] += 1 }.
     map { |name, count| { :name => name, :count => count } }
 end
 
 def merge_data(keys, data)
   # combines two nested data structures into one
-  data[0].values.map.with_index {|value, index| keys[index].merge(value)}
+  data[0].values.map.with_index { |value, index| keys[index].merge(value) }
 end
 
 def find_cool(array)
   # find all cool hashes
-   array.select {|temperature| temperature if temperature.has_value?("cool")}
+   array.find_all {|temperature| temperature.has_value?("cool") }
 end
 
 def organize_schools(schools)
