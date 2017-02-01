@@ -5,7 +5,7 @@ end
 
 def contain_a(words)
   # return all elements that contain the letter 'a'
-  words.select { |word| word.include?("a") }
+  words.find_all { |word| word.include?("a") }
 end
 
 def first_wa(words)
