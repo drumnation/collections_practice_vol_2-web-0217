@@ -19,11 +19,8 @@ def remove_non_strings(array)
 end
 
 def count_elements(names_array)
-  # counts how many times a name appears in the array
-  name_counts = Hash.new(0)
-  names_array.collect { |name| name_counts[name] += 1 }
-  name_counts.collect { |hash, number| hash[:count] = number }
-  name_counts.keys
+  names_array.each_with_object(Hash.new(0)) { |hash, key| key[hash[:name]] += 1 }.
+    map { |name, count| { :name => name, :count => count } }
 end
 
 def merge_data(keys, data)
